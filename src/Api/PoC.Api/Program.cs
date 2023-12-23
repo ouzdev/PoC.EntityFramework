@@ -1,4 +1,5 @@
 using Infrastructure.Core.StartupConfiguration;
+using MediatR;
 using PoC.Application;
 
 namespace PoC.Api
@@ -11,6 +12,7 @@ namespace PoC.Api
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestLoggingBehavior<,>));
             builder.Services.AddMySwagger(builder.Configuration);
             builder.Services.AddApplication();
 
