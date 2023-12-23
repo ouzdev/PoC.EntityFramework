@@ -1,0 +1,6 @@
+@PoC.EntityFramework_HostAddress = http://localhost:5183
+
+GET {{PoC.EntityFramework_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
