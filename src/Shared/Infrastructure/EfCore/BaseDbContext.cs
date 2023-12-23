@@ -6,7 +6,7 @@ namespace Infrastructure.EfCore
     {
         public BaseDbContext(DbContextOptions options):base(options)
         {
-            
+            //Deneme
         }
     }
 }
