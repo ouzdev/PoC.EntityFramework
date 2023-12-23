@@ -9,5 +9,12 @@ namespace PoC.Infrastructure.EfCore
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(PoCDbContext).Assembly);
+        }
     }
 }
