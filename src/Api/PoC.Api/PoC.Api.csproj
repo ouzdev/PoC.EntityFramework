@@ -8,11 +8,7 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-  </ItemGroup>
-
+	
   <ItemGroup>
     <ProjectReference Include="..\..\PoC.Application\PoC.Application.csproj" />
   </ItemGroup>

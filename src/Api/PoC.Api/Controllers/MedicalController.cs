@@ -1,6 +1,4 @@
-﻿
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PoC.Application.Queries.Medical.GetMedical;
 
 namespace PoC.Api.Controllers
