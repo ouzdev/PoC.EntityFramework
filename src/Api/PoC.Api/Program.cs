@@ -1,6 +1,8 @@
 using Infrastructure.Core.StartupConfiguration;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using PoC.Application;
+using PoC.Infrastructure.EfCore;
 
 namespace PoC.Api
 {
@@ -12,6 +14,10 @@ namespace PoC.Api
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddDbContext<PoCDbContext>(opt =>
+            {
+                opt.UseNpgsql(builder.Configuration.GetConnectionString("PoC"));
+            });
             builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestLoggingBehavior<,>));
             builder.Services.AddMySwagger(builder.Configuration);
             builder.Services.AddApplication();
