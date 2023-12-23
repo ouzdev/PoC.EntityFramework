@@ -1,4 +1,10 @@
 
+using MediatR;
+using PoC.Application;
+using PoC.Application.Queries.Medical.GetMedical;
+using System.Net.NetworkInformation;
+using System.Reflection;
+
 namespace PoC.Api
 {
     public class Program
@@ -13,6 +19,9 @@ namespace PoC.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
+            builder.Services.AddApplication();
+
 
             var app = builder.Build();
 
