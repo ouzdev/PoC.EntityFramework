@@ -2,11 +2,23 @@
 
 namespace PoC.Application.Queries.Medical.GetMedical
 {
-    public class GetMedicalRecordsQueryHandler : IRequestHandler<GetMedicalRecordsQuery,List<MedicalDto>>
+    public class GetMedicalRecordsQueryHandler : IRequestHandler<GetMedicalRecordsQuery, List<MedicalDto>>
     {
-        Task<List<MedicalDto>> IRequestHandler<GetMedicalRecordsQuery, List<MedicalDto>>.Handle(GetMedicalRecordsQuery request, CancellationToken cancellationToken)
+        public GetMedicalRecordsQueryHandler()
         {
-            throw new NotImplementedException();
+            
+        }
+
+        public Task<List<MedicalDto>> Handle(GetMedicalRecordsQuery request, CancellationToken cancellationToken)
+        {
+            return Task.FromResult(new List<MedicalDto>()
+           {
+             new()
+             {
+                 Id = Guid.NewGuid(),
+                 Name = "Medical 1"
+             }
+           });
         }
     }
 }

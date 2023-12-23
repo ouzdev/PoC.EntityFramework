@@ -1,11 +1,6 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoC.Application
 {
@@ -15,6 +10,8 @@ namespace PoC.Application
         public static IServiceCollection AddApplication(this IServiceCollection serviceProvider)
         {
             ServiceCollection services = AddQueryAndCommandReferences();
+
+            serviceProvider.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
             return services;
         }

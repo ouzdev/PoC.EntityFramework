@@ -7,6 +7,7 @@ namespace PoC.Infrastructure.EfCore
     {
         public PoCDbContext(DbContextOptions<PoCDbContext> options) : base(options)
         {
+
         }
     }
 }
