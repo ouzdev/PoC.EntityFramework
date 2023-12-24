@@ -13,7 +13,7 @@
 	  <PackageReference Include="MediatR" Version="12.2.0" />
 	</ItemGroup>
 
-	<ItemGroup>	  <ProjectReference Include="..\Shared\Common\Common.csproj" />
+	<ItemGroup>	  <ProjectReference Include="..\PoC.Infrastructure\PoC.Infrastructure.csproj" />	  <ProjectReference Include="..\Shared\Common\Common.csproj" />
 	  <ProjectReference Include="..\Shared\Infrastructure\Infrastructure.csproj" />
 	</ItemGroup>
 

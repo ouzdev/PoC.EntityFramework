@@ -3,22 +3,17 @@ using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
 
-namespace PoC.Api
+namespace PoC.Api.Middlewares
 {
-    public class RequestLoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse> where TResponse : class
+    public class RequestLoggingBehavior<TRequest, TResponse>(ILogger<RequestLoggingBehavior<TRequest, TResponse>> logger) : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse> where TResponse : class
     {
-        private ILogger<RequestLoggingBehavior<TRequest, TResponse>> _logger;
-
-        public RequestLoggingBehavior(ILogger<RequestLoggingBehavior<TRequest, TResponse>> logger)
-        {
-            _logger = logger;
-        }
+        private ILogger<RequestLoggingBehavior<TRequest, TResponse>> _logger = logger;
 
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             var timer = new Stopwatch();
 
-            timer.Start();  
+            timer.Start();
 
             var log = new StringBuilder();
             var requestModel = string.Empty;
@@ -29,7 +24,7 @@ namespace PoC.Api
             try
             {
                 requestModel = JsonSerializer.Serialize(request);
-             
+
 
                 log.Append("Request Handled: {Name}");
 
