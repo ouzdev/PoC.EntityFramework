@@ -5,21 +5,26 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1624C018-D31E-439D-9F39-C7FBAE939205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.Domain", "src\PoC.Domain\PoC.Domain.csproj", "{F0C9F3FF-766B-4085-B91A-C0702BF0BB29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.Domain", "src\PoC.Domain\PoC.Domain.csproj", "{F0C9F3FF-766B-4085-B91A-C0702BF0BB29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.Application", "src\PoC.Application\PoC.Application.csproj", "{0B79CC19-EBBE-4E6A-9D62-E523B7F5E2C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.Application", "src\PoC.Application\PoC.Application.csproj", "{0B79CC19-EBBE-4E6A-9D62-E523B7F5E2C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.Infrastructure", "src\PoC.Infrastructure\PoC.Infrastructure.csproj", "{B4D8AB96-83A5-45FD-86CC-D079DAD64BE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.Infrastructure", "src\PoC.Infrastructure\PoC.Infrastructure.csproj", "{B4D8AB96-83A5-45FD-86CC-D079DAD64BE1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{1EE80A58-F22A-4252-9BFD-B909D50FE041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.Api", "src\Api\PoC.Api\PoC.Api.csproj", "{9B3B47AE-CF26-4CFE-9A66-0F6A0DEE4116}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.Api", "src\Api\PoC.Api\PoC.Api.csproj", "{9B3B47AE-CF26-4CFE-9A66-0F6A0DEE4116}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{9544F55B-0BCA-4610-9DF5-1C457D2C7A8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Shared\Common\Common.csproj", "{020A20FE-0323-4DDE-A994-40123FA5492D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "src\Shared\Common\Common.csproj", "{020A20FE-0323-4DDE-A994-40123FA5492D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Shared\Infrastructure\Infrastructure.csproj", "{E7E43294-0F5C-4796-B0F9-7EDA9738AF86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Shared\Infrastructure\Infrastructure.csproj", "{E7E43294-0F5C-4796-B0F9-7EDA9738AF86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{F9419A98-7DE6-43C9-89C5-CF769620F7B3}"
+	ProjectSection(SolutionItems) = preProject
+		Migration.sh = Migration.sh
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +69,7 @@ Global
 		{9544F55B-0BCA-4610-9DF5-1C457D2C7A8A} = {1624C018-D31E-439D-9F39-C7FBAE939205}
 		{020A20FE-0323-4DDE-A994-40123FA5492D} = {9544F55B-0BCA-4610-9DF5-1C457D2C7A8A}
 		{E7E43294-0F5C-4796-B0F9-7EDA9738AF86} = {9544F55B-0BCA-4610-9DF5-1C457D2C7A8A}
+		{F9419A98-7DE6-43C9-89C5-CF769620F7B3} = {1624C018-D31E-439D-9F39-C7FBAE939205}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5773135-A1CA-4D0F-BF82-53A0CC2C6ECC}

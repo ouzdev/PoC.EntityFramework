@@ -1,18 +1,21 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace PoC.Infrastructure.EfCore.Migrations
 {
     /// <inheritdoc />
-    public partial class add_migration : Migration
+    public partial class initialmiration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "poc");
+
             migrationBuilder.CreateTable(
                 name: "categories",
+                schema: "poc",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -30,6 +33,7 @@ namespace PoC.Infrastructure.EfCore.Migrations
 
             migrationBuilder.CreateTable(
                 name: "products",
+                schema: "poc",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -49,6 +53,7 @@ namespace PoC.Infrastructure.EfCore.Migrations
                     table.ForeignKey(
                         name: "FK_products_categories_CategoryId",
                         column: x => x.CategoryId,
+                        principalSchema: "poc",
                         principalTable: "categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -56,6 +61,7 @@ namespace PoC.Infrastructure.EfCore.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_products_CategoryId",
+                schema: "poc",
                 table: "products",
                 column: "CategoryId");
         }
@@ -64,10 +70,12 @@ namespace PoC.Infrastructure.EfCore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "products");
+                name: "products",
+                schema: "poc");
 
             migrationBuilder.DropTable(
-                name: "categories");
+                name: "categories",
+                schema: "poc");
         }
     }
 }

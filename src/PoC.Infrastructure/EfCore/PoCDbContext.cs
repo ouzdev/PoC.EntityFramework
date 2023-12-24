@@ -3,18 +3,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PoC.Infrastructure.EfCore
 {
-    public class PoCDbContext : BaseDbContext<Guid>
+    public class PoCDbContext(DbContextOptions<PoCDbContext> options) : BaseDbContext<Guid>(options)
     {
-        public PoCDbContext(DbContextOptions<PoCDbContext> options) : base(options)
-        {
-
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(PoCDbContext).Assembly);
+
+            modelBuilder.HasDefaultSchema("poc");
         }
     }
 }

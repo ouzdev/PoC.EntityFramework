@@ -17,6 +17,7 @@ namespace PoC.Infrastructure.EfCore.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("poc")
                 .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -51,7 +52,7 @@ namespace PoC.Infrastructure.EfCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("categories", (string)null);
+                    b.ToTable("categories", "poc");
                 });
 
             modelBuilder.Entity("PoC.Domain.Domains.Product", b =>
@@ -96,7 +97,7 @@ namespace PoC.Infrastructure.EfCore.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("products", (string)null);
+                    b.ToTable("products", "poc");
                 });
 
             modelBuilder.Entity("PoC.Domain.Domains.Product", b =>
